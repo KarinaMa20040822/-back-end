@@ -201,6 +201,7 @@
                 copyright...
             </div>
             <div class="counter">
+
 			<%
 			  int counter;
 			  String strNo = (String)application.getAttribute("counter");//讀application變數

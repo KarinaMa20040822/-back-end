@@ -1,7 +1,5 @@
-<%@ page import = "java.sql.*, java.util.*"%>
-<%@page contentType="text/html"%>
-<%@page pageEncoding="utf-8"%> 
-<%@include file="db_con.jsp"%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" import="java.sql.*" %> 
+<%@include file="config.jsp"%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -121,49 +119,46 @@
 <body>
   <div class="title">後台管理系統</div>
 <% 
-sql = "SELECT * FROM `product`"; 
+String sql = "SELECT * FROM `products`"; 
 PreparedStatement pstmt = con.prepareStatement(sql);
 ResultSet rs=pstmt.executeQuery();
 //先移到檔尾, getRow()後, 就可知道共有幾筆記錄
 rs.last();
 int totalNo=rs.getRow();
+rs.beforeFirst();
 
 
-String[] src = new String[totalNo+1];
 String[] id = new String[totalNo+1];
+String[] productsName = new String[totalNo+1];
 String[] price = new String[totalNo+1];
-String[] reserve = new String[totalNo+1];
-String[] desc = new String[totalNo+1];
+String[] instock = new String[totalNo+1];
 for(int i=1;i<=totalNo;i++){
-		sql = "SELECT * FROM `product` WHERE `id` LIKE '" +i+"'"; 
+		sql += "SELECT * FROM `products` WHERE `id` LIKE '" +i+"'"; 
 		rs =con.createStatement().executeQuery(sql);
 		rs.next();
 		id[i]=rs.getString(1);
-		desc[i]=rs.getString(11);
+		productsName[i]=rs.getString(2);
 		price[i]=rs.getString(5);
-		src[i]=rs.getString(10);
-		reserve[i]=rs.getString(6);
-
-	
+		instock[i]=rs.getString(4);	
 }
-							%>	
+%>	
 
 
   <table border="1">
     　<tr>
-      　<td>id</td>
+      　<td>ID</td>
       　<td>商品名稱</td>
-      <td>價格</td>
+		<td>價格</td>
       　<td>庫存</td>
-      <td>修改</td>
+		<td>修改</td>
     </tr>   
 	　
     <tr>
 		<form name="form1" action="" method="POST">
       　<td><input type="text" name="name4" style="font-size: 25px; text-align:center;" value="<%=id[1]%>" onfocus=this.blur()></td>
-		　<td><input type="text" name="name1" style="font-size: 25px;" value="<%=desc[1]%>"></td>	
+		<td><input type="text" name="name1" style="font-size: 25px;" value="<%=productsName[1]%>"></td>	
       　<td><input type="text" name="name2" style="font-size: 25px;" value="<%=price[1]%>"></td>
-      <td><input type="text" name="name3" style="font-size: 25px;" value="<%=reserve[1]%>"></td>
+      <td><input type="text" name="name3" style="font-size: 25px;" value="<%=instock[1]%>"></td>
       <td>
         <input type="button" onclick="a()" class="addbutton1" style="font-size: 25px;" value="修改資料">
         <input type="button" onclick="a2()" class="addbutton1" style="font-size: 25px;" value="刪除資料">
@@ -171,12 +166,12 @@ for(int i=1;i<=totalNo;i++){
       　</form>
     </tr>
 	
-  <tr>
+	<tr>
 		<form name="form2" action="" method="POST">
       　<td><input type="text" name="name4" style="font-size: 25px; text-align:center;" value="<%=id[2]%>" onfocus=this.blur()></td>
-		　<td><input type="text" name="name1" style="font-size: 25px;" value="<%=desc[2]%>"></td>	
+		　<td><input type="text" name="name1" style="font-size: 25px;" value="<%=productsName[2]%>"></td>	
       　<td><input type="text" name="name2" style="font-size: 25px;" value="<%=price[2]%>"></td>
-      <td><input type="text" name="name3" style="font-size: 25px;" value="<%=reserve[2]%>"></td>
+      <td><input type="text" name="name3" style="font-size: 25px;" value="<%=instock[2]%>"></td>
 
       <td>
         <input type="button" onclick="b()" class="addbutton1" style="font-size: 25px;" value="修改資料">
@@ -188,9 +183,9 @@ for(int i=1;i<=totalNo;i++){
     <tr>
 		<form name="form3" action="" method="POST">
       　<td><input type="text" name="name4" style="font-size: 25px; text-align:center;" value="<%=id[3]%>" onfocus=this.blur()></td>
-		　<td><input type="text" name="name1" style="font-size: 25px;" value="<%=desc[3]%>"></td>	
+		　<td><input type="text" name="name1" style="font-size: 25px;" value="<%=productsName[3]%>"></td>	
       　<td><input type="text" name="name2" style="font-size: 25px;" value="<%=price[3]%>"></td>
-      <td><input type="text" name="name3" style="font-size: 25px;" value="<%=reserve[3]%>"></td>
+      <td><input type="text" name="name3" style="font-size: 25px;" value="<%=instock[3]%>"></td>
 
       <td>
         <input type="button" onclick="c()" class="addbutton1" style="font-size: 25px;" value="修改資料">
@@ -202,9 +197,9 @@ for(int i=1;i<=totalNo;i++){
     <tr>
 		<form name="form4" action="" method="POST">
       　<td><input type="text" name="name4" style="font-size: 25px; text-align:center;" value="<%=id[4]%>" onfocus=this.blur()></td>
-		　<td><input type="text" name="name1" style="font-size: 25px;" value="<%=desc[4]%>"></td>	
+		　<td><input type="text" name="name1" style="font-size: 25px;" value="<%=productsName[4]%>"></td>	
       　<td><input type="text" name="name2" style="font-size: 25px;" value="<%=price[4]%>"></td>
-      <td><input type="text" name="name3" style="font-size: 25px;" value="<%=reserve[4]%>"></td>
+      <td><input type="text" name="name3" style="font-size: 25px;" value="<%=instock[4]%>"></td>
 
       <td>
         <input type="button" onclick="d()" class="addbutton1" style="font-size: 25px;" value="修改資料">
@@ -216,9 +211,9 @@ for(int i=1;i<=totalNo;i++){
     <tr>
 		<form name="form5" action="" method="POST">
       　<td><input type="text" name="name4" style="font-size: 25px; text-align:center;" value="<%=id[5]%>" onfocus=this.blur()></td>
-		　<td><input type="text" name="name1" style="font-size: 25px;" value="<%=desc[5]%>"></td>	
+		　<td><input type="text" name="name1" style="font-size: 25px;" value="<%=productsName[5]%>"></td>	
       　<td><input type="text" name="name2" style="font-size: 25px;" value="<%=price[5]%>"></td>
-      <td><input type="text" name="name3" style="font-size: 25px;" value="<%=reserve[5]%>"></td>
+      <td><input type="text" name="name3" style="font-size: 25px;" value="<%=instock[5]%>"></td>
 
       <td>
         <input type="button" onclick="e()" class="addbutton1" style="font-size: 25px;" value="修改資料">
@@ -230,9 +225,9 @@ for(int i=1;i<=totalNo;i++){
     <tr>
 		<form name="form6" action="" method="POST">
       　<td><input type="text" name="name4" style="font-size: 25px; text-align:center;" value="<%=id[6]%>" onfocus=this.blur()></td>
-		　<td><input type="text" name="name1" style="font-size: 25px;" value="<%=desc[6]%>"></td>	
+		　<td><input type="text" name="name1" style="font-size: 25px;" value="<%=productsName[6]%>"></td>	
       　<td><input type="text" name="name2" style="font-size: 25px;" value="<%=price[6]%>"></td>
-      <td><input type="text" name="name3" style="font-size: 25px;" value="<%=reserve[6]%>"></td>
+      <td><input type="text" name="name3" style="font-size: 25px;" value="<%=instock[6]%>"></td>
 
       <td>
         <input type="button" onclick="f()" class="addbutton1" style="font-size: 25px;" value="修改資料">
@@ -244,9 +239,9 @@ for(int i=1;i<=totalNo;i++){
     <tr>
 		<form name="form7" action="" method="POST">
       　<td><input type="text" name="name4" style="font-size: 25px; text-align:center;" value="<%=id[7]%>" onfocus=this.blur()></td>
-		　<td><input type="text" name="name1" style="font-size: 25px;" value="<%=desc[7]%>"></td>	
+		　<td><input type="text" name="name1" style="font-size: 25px;" value="<%=productsName[7]%>"></td>	
       　<td><input type="text" name="name2" style="font-size: 25px;" value="<%=price[7]%>"></td>
-      <td><input type="text" name="name3" style="font-size: 25px;" value="<%=reserve[7]%>"></td>
+      <td><input type="text" name="name3" style="font-size: 25px;" value="<%=instock[7]%>"></td>
 
       <td>
         <input type="button" onclick="g()" class="addbutton1" style="font-size: 25px;" value="修改資料">
@@ -258,9 +253,9 @@ for(int i=1;i<=totalNo;i++){
     <tr>
 		<form name="form8" action="" method="POST">
       　<td><input type="text" name="name4" style="font-size: 25px; text-align:center;" value="<%=id[8]%>" onfocus=this.blur()></td>
-		　<td><input type="text" name="name1" style="font-size: 25px;" value="<%=desc[8]%>"></td>	
+		　<td><input type="text" name="name1" style="font-size: 25px;" value="<%=productsName[8]%>"></td>	
       　<td><input type="text" name="name2" style="font-size: 25px;" value="<%=price[8]%>"></td>
-      <td><input type="text" name="name3" style="font-size: 25px;" value="<%=reserve[8]%>"></td>
+      <td><input type="text" name="name3" style="font-size: 25px;" value="<%=instock[8]%>"></td>
 
       <td>
         <input type="button" onclick="h()" class="addbutton1" style="font-size: 25px;" value="修改資料">
@@ -272,9 +267,9 @@ for(int i=1;i<=totalNo;i++){
     <tr>
 		<form name="form9" action="" method="POST">
       　<td><input type="text" name="name4" style="font-size: 25px; text-align:center;" value="<%=id[9]%>" onfocus=this.blur()></td>
-		　<td><input type="text" name="name1" style="font-size: 25px;" value="<%=desc[9]%>"></td>	
+		　<td><input type="text" name="name1" style="font-size: 25px;" value="<%=productsName[9]%>"></td>	
       　<td><input type="text" name="name2" style="font-size: 25px;" value="<%=price[9]%>"></td>
-      <td><input type="text" name="name3" style="font-size: 25px;" value="<%=reserve[9]%>"></td>
+      <td><input type="text" name="name3" style="font-size: 25px;" value="<%=instock[9]%>"></td>
 
       <td>
         <input type="button" onclick="i()" class="addbutton1" style="font-size: 25px;" value="修改資料">
@@ -286,9 +281,9 @@ for(int i=1;i<=totalNo;i++){
     <tr>
 		<form name="form10" action="" method="POST">
       　<td><input type="text" name="name4" style="font-size: 25px; text-align:center;" value="<%=id[10]%>" onfocus=this.blur()></td>
-		　<td><input type="text" name="name1" style="font-size: 25px;" value="<%=desc[10]%>"></td>	
+		　<td><input type="text" name="name1" style="font-size: 25px;" value="<%=productsName[10]%>"></td>	
       　<td><input type="text" name="name2" style="font-size: 25px;" value="<%=price[10]%>"></td>
-      <td><input type="text" name="name3" style="font-size: 25px;" value="<%=reserve[10]%>"></td>
+      <td><input type="text" name="name3" style="font-size: 25px;" value="<%=instock[10]%>"></td>
 
       <td>
         <input type="button" onclick="j()" class="addbutton1" style="font-size: 25px;" value="修改資料">
@@ -300,9 +295,9 @@ for(int i=1;i<=totalNo;i++){
     <tr>
 		<form name="form11" action="" method="POST">
       　<td><input type="text" name="name4" style="font-size: 25px; text-align:center;" value="<%=id[11]%>" onfocus=this.blur()></td>
-		　<td><input type="text" name="name1" style="font-size: 25px;" value="<%=desc[11]%>"></td>	
+		　<td><input type="text" name="name1" style="font-size: 25px;" value="<%=productsName[11]%>"></td>	
       　<td><input type="text" name="name2" style="font-size: 25px;" value="<%=price[11]%>"></td>
-      <td><input type="text" name="name3" style="font-size: 25px;" value="<%=reserve[11]%>"></td>
+      <td><input type="text" name="name3" style="font-size: 25px;" value="<%=instock[11]%>"></td>
 
       <td>
         <input type="button" onclick="k()" class="addbutton1" style="font-size: 25px;" value="修改資料">
@@ -314,9 +309,9 @@ for(int i=1;i<=totalNo;i++){
     <tr>
 		<form name="form12" action="" method="POST">
       　<td><input type="text" name="name4" style="font-size: 25px; text-align:center;" value="<%=id[12]%>" onfocus=this.blur()></td>
-		　<td><input type="text" name="name1" style="font-size: 25px;" value="<%=desc[12]%>"></td>	
+		　<td><input type="text" name="name1" style="font-size: 25px;" value="<%=productsName[12]%>"></td>	
       　<td><input type="text" name="name2" style="font-size: 25px;" value="<%=price[12]%>"></td>
-      <td><input type="text" name="name3" style="font-size: 25px;" value="<%=reserve[12]%>"></td>
+      <td><input type="text" name="name3" style="font-size: 25px;" value="<%=instock[12]%>"></td>
 
       <td>
         <input type="button" onclick="l()" class="addbutton1" style="font-size: 25px;" value="修改資料">
@@ -329,9 +324,9 @@ for(int i=1;i<=totalNo;i++){
     <tr>
 		<form name="form13" action="" method="POST">
       　<td><input type="text" name="name4" style="font-size: 25px; text-align:center;" value="<%=id[13]%>" onfocus=this.blur()></td>
-		　<td><input type="text" name="name1" style="font-size: 25px;" value="<%=desc[13]%>"></td>	
+		　<td><input type="text" name="name1" style="font-size: 25px;" value="<%=productsName[13]%>"></td>	
       　<td><input type="text" name="name2" style="font-size: 25px;" value="<%=price[13]%>"></td>
-      <td><input type="text" name="name3" style="font-size: 25px;" value="<%=reserve[13]%>"></td>
+      <td><input type="text" name="name3" style="font-size: 25px;" value="<%=instock[13]%>"></td>
 
       <td>
         <input type="button" onclick="m()" class="addbutton1" style="font-size: 25px;" value="修改資料">
@@ -347,11 +342,11 @@ for(int i=1;i<=totalNo;i++){
 
 
   <div class="space">
-  <a href="backstageinsert.jsp"><button class="addbutton2" style="font-size: 25px;">新增資料 </button></a>
+  <a href="backstageinsert.jsp"><button class="addbutton2" style="font-size: 25px;">新增資料</button></a>
   </div>
   <div class="space2">
-  <a href="index.jsp"><button class="addbutton3" style="font-size: 25px;">回首頁 </button></a>
-  <a href="logout.jsp"><button class="addbutton3" style="font-size: 25px;">登出 </button></a>
+  <a href="index.jsp"><button class="addbutton3" style="font-size: 25px;">回首頁</button></a>
+  <a href="logout.jsp"><button class="addbutton3" style="font-size: 25px;">登出</button></a>
   </div>
   
   
