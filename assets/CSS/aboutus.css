@@ -1,10 +1,10 @@
-*{
+* {
     margin: 0;
     padding: 0;
 }
 
-body{
-    margin-top: min(5%,100px);
+body {
+    margin-top: min(5%, 100px);
     background-color: #2D2D2D;
     font-family: "Noto Sans TC", sans-serif;
     font-optical-sizing: auto;
@@ -17,7 +17,7 @@ body{
     z-index: 5;
 }
 
-.container{
+.container {
     margin-bottom: 50px;
     display: flex;
     flex-direction: column;
@@ -25,7 +25,7 @@ body{
     align-items: center;
 }
 
-.title{
+.title {
     margin-top: 50px;
     margin-bottom: 50px;
     color: #D9D9D9;
@@ -33,14 +33,14 @@ body{
     text-align: center;
 }
 
-.member-container{
+.member-container {
     display: flex;
     color: #D9D9D9;
     justify-content: space-around;
     width: 80%;
 }
 
-.member{
+.member {
     width: 350px;
     height: 1000px;
     padding: 50px;
@@ -52,24 +52,24 @@ body{
     row-gap: 15px;
 }
 
-.member img{
+.member img {
     height: 150px;
     width: 150px;
     border-radius: 15px;
 }
 
-.member .name{
+.member .name {
     font-size: 30px;
 }
 
-.link-container{
+.link-container {
     display: flex;
     flex-direction: row;
     width: 80%;
     justify-content: center;
 }
 
-.icon img{
+.icon img {
     height: 50px;
     width: 50px;
     margin: 0px 10px;
@@ -87,7 +87,7 @@ body{
     fill: #00ffcc;
 }
 
-.reflection{
+.reflection {
     font-size: 20px;
     overflow-y: auto;
 }
@@ -122,12 +122,13 @@ body{
 
 .glow-on-hover:before {
     content: '';
-    background: repeating-linear-gradient(-45deg,red 0%, yellow 7.14%, rgb(0,255,0) 14.28%, rgb(0,255,255) 21.42%, cyan 28.56%, blue 35.7%, magenta 42.84%, red 50%);
-    background-size:300vw 300vw;
-    -webkit-animation:'glowing' 3s infinite linear forwards;
+    background: repeating-linear-gradient(-45deg, red 0%, yellow 7.14%, rgb(0, 255, 0) 14.28%, rgb(0, 255, 255) 21.42%, cyan 28.56%, blue 35.7%, magenta 42.84%, red 50%);
+    background-size: 300vw 300vw;
+    -webkit-animation: 'glowing' 3s infinite linear forwards;
+    animation: 'glowing' 3s infinite linear forwards;
     position: absolute;
     top: -2px;
-    left:-2px;
+    left: -2px;
     z-index: -1;
     filter: blur(5px);
     width: calc(100% + 4px);
@@ -161,24 +162,25 @@ body{
     border-radius: 30px;
 }
 
-@keyframes glowing{
-    0%{
-      background-position-x: 0%;
+@keyframes glowing {
+    0% {
+        background-position-x: 0%;
     }
-    100%{
-      background-position-x: 300vw;
-    }
-  }
 
-@media screen and (max-width: 900px){
-    .member-container{
+    100% {
+        background-position-x: 300vw;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .member-container {
         flex-direction: column;
         justify-content: center;
         align-items: center;
         width: 80%;
     }
 
-    .member{
+    .member {
         width: 80%;
     }
 }
