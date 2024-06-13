@@ -202,15 +202,11 @@
             </div>
             <div class="counter">
 
-			<%
-			  int counter;
-			  String strNo = (String)application.getAttribute("counter");//讀application變數
-			  counter = Integer.parseInt(strNo); //轉成整數
-			  counter++;                                        //計數器加1
-			  strNo = String.valueOf(counter);    //轉成字串
-			  application.setAttribute("counter", strNo);//寫application變數
-			%>
-                    <div>Vistor count:<%= counter %></div>
+                <% int counter; String strNo=(String)application.getAttribute("counter");//讀application變數
+                    counter=Integer.parseInt(strNo); //轉成整數 counter++; //計數器加1 strNo=String.valueOf(counter); //轉成字串
+                    application.setAttribute("counter", strNo);//寫application變數 %>
+                    <div>Vistor count:<%= counter %>
+                    </div>
 
 
             </div>
@@ -220,4 +216,3 @@
 </body>
 
 </html>
-
