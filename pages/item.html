@@ -5,9 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>item</title>
     <link rel="stylesheet" href="../assets/CSS/item.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
     <!--Navigation bar-->
     <div id="nav-placeholder">
 
@@ -15,7 +18,7 @@
 
     <script>
     $(function(){
-    $("#nav-placeholder").load("../nav.html");
+    $("#nav-placeholder").load("nav.html");
     });
     </script>
 
@@ -36,7 +39,7 @@
                     <p class="per-mo">/ Per month</p>
                 </div>
                 <form method="post" name="">
-                    <div class="flex">
+                    <div class="quantity-container">
                         <div class="quantity">
                             <input type="button" class="minus" value="-">
                             <input type="number" value="1" min="1">
@@ -61,27 +64,27 @@
                 <div class="config-item" data-target="cpu">
                     <label for="vcpu">vCPU</label>
                     <p>2</p>
-                    <label>GB</label>
+                    <label class="gb">Cores</label>
                 </div>
                 <div class="config-item" data-target="gpu">
                     <label for="ram">vGPU</label>
                     <p>4</p>
-                    <label>GB</label>
+                    <label class="gb">GB</label>
                 </div>
                 <div class="config-item" data-target="ram">
                     <label for="ram">RAM</label>
                     <p>4</p>
-                    <label>GB</label>
+                    <label class="gb">GB</label>
                 </div>
                 <div class="config-item" data-target="mem">
                     <label for="mem">Mem.</label>
                     <p>8</p>
-                    <label>GB</label>
+                    <label class="gb">GB</label>
                 </div>
                 <div class="config-item">
                     <label for="bandwidth">Bandwidth</label>
                     <p>100</p>
-                    <label>GB</label>
+                    <label class="gb">GB</label>
                 </div>
             </div>
         </section>
@@ -89,27 +92,24 @@
         <div class="below">
             <section class="reviews">
                 <h2>Reviews</h2>
-                <iframe src="reviews.html"></iframe>
-                <!-- <div class="review">
-                    <p><strong>Perfect!</strong></p>
-                    <p>I've been wearing my AFT for months now and I always get compliments, not to mention they are comfortable and easy to clean. I wear a 9 in nike sneakers and these fit me great!</p>
-                    <p><em>- Nancy6152837, Apr 26, 2024</em></p>
-                </div>
-                <div class="review">
-                    <p><strong>Perfect!</strong></p>
-                    <p>I've been wearing my AFT for months now and I always get compliments, not to mention they are comfortable and easy to clean. I wear a 9 in nike sneakers and these fit me great!</p>
-                    <p><em>- Nancy6152837, Apr 26, 2024</em></p>
-                </div>
-                <a href="#" class="more-reviews">More Reviews</a> -->
+                <div class="reviews-container">
+                    <iframe src="reviews.html"></iframe>
+                 </div>  
             </section>
             <section class="brand">
                 <h2>Why VPS?</h2>
                 <p>Unlock the full potential of your business with our VPS services! Experience unmatched flexibility, speed, and scalability that outshines traditional cloud hosting and on-premise servers. Enjoy dedicated resources, enhanced security, and 24/7 expert support, all at a fraction of the cost. Upgrade to our VPS and transform your digital infrastructure today!</p>
                 <h2>Our VPS has...</h2>
-                <div class="flex tag">
-                    <p class="brand-tag">Best Price</p>
-                    <p class="brand-tag">Best Warranty</p>
-                    <p class="brand-tag">Best Service</p>
+                <div class="brand-tag-container">
+                    <div class="brand-tag">
+                        <div class="tag-text">Best Price</div>
+                    </div>
+                    <div class="brand-tag">
+                        <div class="tag-text">Best Warranty</div
+                            ></div>
+                    <div class="brand-tag">
+                        <div class="tag-text">Best Service</div>
+                    </div>
                 </div>
             </section>
         </div>

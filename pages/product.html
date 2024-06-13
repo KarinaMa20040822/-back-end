@@ -1,22 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/CSS/product.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/9b3624985e.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../assets/CSS/product.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
     <title>Product</title>
 </head>
+
 <body>
-    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
     <!--Navigation bar-->
     <div id="nav-placeholder">
 
     </div>
 
     <script>
-    $(function(){
-    $("#nav-placeholder").load("nav.html");
-    });
+        $(function () {
+            $("#nav-placeholder").load("nav.html");
+        });
 
     </script>
     <!--end of Navigation bar-->
@@ -24,179 +29,190 @@
         <div class="ad">AD</div>
         <div class="product productGrid">
             <div class="img-container">
-                <img src="/E-Commerce-Front-end/assets/img/cart.png">
+                <img src="../assets/img/cart.webp">
             </div>
             <div class="product-desc">
-                <div><h1>APP Based</h1></div>
-                <div><h2>Build Your APP with Own VPS service</h2></div>
-                <div><p>In stock: 30</p></div>
-                <div class="buy-button" onclick="location.href='/E-Commerce-Front-end/pages/item.html';">
-                    <div class="cart-image">
-                        <img src="/E-Commerce-Front-end/assets/img/cart.png">
-                    </div>
-                    <div class="buy-text">BUY</div>
+                <p class="title">APP Based</p>
+                <p class="desc">Build Your APP<br> with Own VPS service</p>
+                <p class="stock">In stock: 30</p>
+                <div class="buy-section">
+                    <i class="fa-solid fa-cart-plus cart-image"></i>
+                    <form method="post" action="product.jsp">
+                        <input type="hidden" name="product" value="appmax">
+                        <input type="submit" class="buy-button" value="BUY">
+                    </form>
                 </div>
             </div>
         </div>
 
         <div class="product productGrid">
             <div class="img-container">
-                <img src="">
+                <img src="../assets/img/cart.webp">
             </div>
             <div class="product-desc">
-                <div><h1>APP Pro</h1></div>
-                <div><h2>Build Your APP with Own VPS service</h2></div>
-                <div><p>In stock: 30</p></div>
-                <div class="buy-button" onclick="location.href='/E-Commerce-Front-end/pages/item.html';">
-                    <div class="cart-image">
-                        <img src="/E-Commerce-Front-end/assets/img/cart.png">
-                    </div>
-                    <div class="buy-text">BUY</div>
+                <p class="title">APP Pro</p>
+                <p class="desc">Build Your APP<br> with Own VPS service</p>
+                <p class="stock">In stock: 30</p>
+                <div class="buy-section">
+                    <i class="fa-solid fa-cart-plus cart-image"></i>
+                    <form method="post" action="product.jsp">
+                        <input type="hidden" name="product" value="appmax">
+                        <input type="submit" class="buy-button" value="BUY">
+                    </form>
                 </div>
             </div>
         </div>
 
         <div class="product productGrid">
             <div class="img-container">
-                <img src="">
+                <img src="../assets/img/cart.webp">
             </div>
             <div class="product-desc">
-                <div><h1>APP Max</h1></div>
-                <div><h2>Build Your APP with Own VPS service</h2></div>
-                <div><p>In stock: 30</p></div>
-                <div class="buy-button" onclick="location.href='/E-Commerce-Front-end/pages/item.html';">
-                    <div class="cart-image">
-                        <img src="/E-Commerce-Front-end/assets/img/cart.png">
-                    </div>
-                    <div class="buy-text">BUY</div>
+                <p class="title">APP Max</p>
+                <p class="desc">Build Your APP<br> with Own VPS service</p>
+                <p class="stock">In stock: 30</p>
+                <div class="buy-section">
+                    <i class="fa-solid fa-cart-plus cart-image"></i>
+                    <form method="post" action="product.jsp">
+                        <input type="hidden" name="product" value="appmax">
+                        <input type="submit" class="buy-button" value="BUY">
+                    </form>
+                </div>
+            </div>
+        </div>
+        </div>
+
+        <div class="product productGrid">
+            <div class="img-container">
+                <img src="../assets/img/cart.webp">
+            </div>
+            <div class="product-desc">
+                <p class="title">Website Max</p>
+                <p class="desc">Build Your APP<br> with Own VPS service</p>
+                <p class="stock">In stock: 30</p>
+                <div class="buy-section">
+                    <i class="fa-solid fa-cart-plus cart-image"></i>
+                    <form method="post" action="product.jsp">
+                        <input type="hidden" name="product" value="appmax">
+                        <input type="submit" class="buy-button" value="BUY">
+                    </form>
                 </div>
             </div>
         </div>
 
         <div class="product productGrid">
             <div class="img-container">
-                <img src="">
+                <img src="../assets/img/cart.webp">
             </div>
             <div class="product-desc">
-                <div><h1>Website Max</h1></div>
-                <div><h2>Build Your APP with Own VPS service</h2></div>
-                <div><p>In stock: 30</p></div>
-                <div class="buy-button" onclick="location.href='/E-Commerce-Front-end/pages/item.html';">
-                    <div class="cart-image">
-                        <img src="/E-Commerce-Front-end/assets/img/cart.png">
-                    </div>
-                    <div class="buy-text">BUY</div>
+                <p class="title">Website Pro</p>
+                <p class="desc">Build Your APP<br> with Own VPS service</p>
+                <p class="stock">In stock: 30</p>
+                <div class="buy-section">
+                    <i class="fa-solid fa-cart-plus cart-image"></i>
+                    <form method="post" action="product.jsp">
+                        <input type="hidden" name="product" value="appmax">
+                        <input type="submit" class="buy-button" value="BUY">
+                    </form>
                 </div>
             </div>
         </div>
 
         <div class="product productGrid">
             <div class="img-container">
-                <img src="">
+                <img src="../assets/img/cart.webp">
             </div>
             <div class="product-desc">
-                <div><h1>Website Pro</h1></div>
-                <div><h2>Build Your APP with Own VPS service</h2></div>
-                <div><p>In stock: 30</p></div>
-                <div class="buy-button" onclick="location.href='/E-Commerce-Front-end/pages/item.html';">
-                    <div class="cart-image">
-                        <img src="/E-Commerce-Front-end/assets/img/cart.png">
-                    </div>
-                    <div class="buy-text">BUY</div>
+                <p class="title">Website Based</p>
+                <p class="desc">Run Your Web<br> with Own VPS service</p>
+                <p class="stock">In stock: 30</p>
+                <div class="buy-section">
+                    <i class="fa-solid fa-cart-plus cart-image"></i>
+                    <form method="post" action="product.jsp">
+                        <input type="hidden" name="product" value="appmax">
+                        <input type="submit" class="buy-button" value="BUY">
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="product productGrid">
+            <div class="img-container">
+                <img src="../assets/img/cart.webp">
+            </div>
+            <div class="product-desc">
+                <p class="title">Website Based</p>
+                <p class="desc">Run Your Web<br> with Own VPS service</p>
+                <p class="stock">In stock: 30</p>
+                <div class="buy-section">
+                    <i class="fa-solid fa-cart-plus cart-image"></i>
+                    <form method="post" action="product.jsp">
+                        <input type="hidden" name="product" value="appmax">
+                        <input type="submit" class="buy-button" value="BUY">
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="product productGrid">
+            <div class="img-container">
+                <img src="../assets/img/cart.webp">
+            </div>
+            <div class="product-desc">
+                <p class="title">Website Based</p>
+                <p class="desc">Run Your Web<br> with Own VPS service</p>
+                <p class="stock">In stock: 30</p>
+                <div class="buy-section">
+                    <i class="fa-solid fa-cart-plus cart-image"></i>
+                    <form method="post" action="product.jsp">
+                        <input type="hidden" name="product" value="appmax">
+                        <input type="submit" class="buy-button" value="BUY">
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="product productGrid">
+            <div class="img-container">
+                <img src="../assets/img/cart.webp">
+            </div>
+            <div class="product-desc">
+                <p class="title">Website Based</p>
+                <p class="desc">Run Your Web<br> with Own VPS service</p>
+                <p class="stock">In stock: 30</p>
+                <div class="buy-section">
+                    <i class="fa-solid fa-cart-plus cart-image"></i>
+                    <form method="post" action="product.jsp">
+                        <input type="hidden" name="product" value="appmax">
+                        <input type="submit" class="buy-button" value="BUY">
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="product productGrid">
+            <div class="img-container">
+                <img src="../assets/img/cart.webp">
+            </div>
+            <div class="product-desc">
+                <p class="title">Website Based</p>
+                <p class="desc">Run Your Web<br> with Own VPS service</p>
+                <p class="stock">In stock: 30</p>
+                <div class="buy-section">
+                    <i class="fa-solid fa-cart-plus cart-image"></i>
+                    <form method="post" action="product.jsp">
+                        <input type="hidden" name="product" value="appmax">
+                        <input type="submit" class="buy-button" value="BUY">
+                    </form>
                 </div>
             </div>
         </div>
 
-        <div class="product productGrid">
-            <div class="img-container">
-                <img src="/E-Commerce-Front-end/assets/img/cart.png">
-            </div>
-            <div class="product-desc">
-                <div><h1>Website Based</h1></div>
-                <div><h2>Build Your APP with Own VPS service</h2></div>
-                <div><p>In stock: 30</p></div>
-                <div class="buy-button" onclick="location.href='/E-Commerce-Front-end/pages/item.html';">
-                    <div class="cart-image">
-                        <img src="/E-Commerce-Front-end/assets/img/cart.png">
-                    </div>
-                    <div class="buy-text">BUY</div>
-                </div>
-            </div>
-        </div>
-        <div class="product productGrid">
-            <div class="img-container">
-                <img src="/E-Commerce-Front-end/assets/img/cart.png">
-            </div>
-            <div class="product-desc">
-                <div><h1>Website Based</h1></div>
-                <div><h2>Build Your APP with Own VPS service</h2></div>
-                <div><p>In stock: 30</p></div>
-                <div class="buy-button" onclick="location.href='/E-Commerce-Front-end/pages/item.html';">
-                    <div class="cart-image">
-                        <img src="/E-Commerce-Front-end/assets/img/cart.png">
-                    </div>
-                    <div class="buy-text">BUY</div>
-                </div>
-            </div>
-        </div>
-        <div class="product productGrid">
-            <div class="img-container">
-                <img src="/E-Commerce-Front-end/assets/img/cart.png">
-            </div>
-            <div class="product-desc">
-                <div><h1>Website Based</h1></div>
-                <div><h2>Build Your APP with Own VPS service</h2></div>
-                <div><p>In stock: 30</p></div>
-                <div class="buy-button" onclick="location.href='/E-Commerce-Front-end/pages/item.html';">
-                    <div class="cart-image">
-                        <img src="/E-Commerce-Front-end/assets/img/cart.png">
-                    </div>
-                    <div class="buy-text">BUY</div>
-                </div>
-            </div>
-        </div>
-        <div class="product productGrid">
-            <div class="img-container">
-                <img src="/E-Commerce-Front-end/assets/img/cart.png">
-            </div>
-            <div class="product-desc">
-                <div><h1>Website Based</h1></div>
-                <div><h2>Build Your APP with Own VPS service</h2></div>
-                <div><p>In stock: 30</p></div>
-                <div class="buy-button" onclick="location.href='/E-Commerce-Front-end/pages/item.html';">
-                    <div class="cart-image">
-                        <img src="/E-Commerce-Front-end/assets/img/cart.png">
-                    </div>
-                    <div class="buy-text">BUY</div>
-                </div>
-            </div>
-        </div>
-        <div class="product productGrid">
-            <div class="img-container">
-                <img src="/E-Commerce-Front-end/assets/img/cart.png">
-            </div>
-            <div class="product-desc">
-                <div><h1>Website Based</h1></div>
-                <div><h2>Build Your APP with Own VPS service</h2></div>
-                <div><p>In stock: 30</p></div>
-                <div class="buy-button" onclick="location.href='/E-Commerce-Front-end/pages/item.html';">
-                    <div class="cart-image">
-                        <img src="/E-Commerce-Front-end/assets/img/cart.png">
-                    </div>
-                    <div class="buy-text">BUY</div>
-                </div>
-            </div>
-        </div>
-        
 
         <div class="product customize productGridWide">
             <div class="img-container">
-                <img src="/E-Commerce-Front-end/assets/img/cart.png">
+                <img src="../assets/img/cart.webp">
             </div>
             <div class="product-desc">
-                <div><h1>Can't find the one you need?</h1></div>
-                <div><h2>Try the Customization service to get your Perfect VPS Program</h2></div>
-                <div class="buy-button" onclick="location.href='/E-Commerce-Front-end/pages/customize.html';">
+                <h1>Can't find the one you need?</h1>
+                <p class="desc">Try the Customization service to get your Perfect VPS Program</p>
+                <div class="buy-button" onclick="location.href='../pages/item-cus.html';">
                     <div class="buy-text">Start Now</div>
                 </div>
             </div>
@@ -207,4 +223,5 @@
 
     </footer>
 </body>
+
 </html>

@@ -2,7 +2,7 @@
 <%
     String url = "jdbc:mysql://localhost:3306/members?serverTimezone=UTC";
     String user = "root";
-    String password = "1234";
+    String password = “1234";
     Connection con = null;
 
     try {
