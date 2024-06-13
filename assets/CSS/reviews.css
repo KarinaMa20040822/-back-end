@@ -1,33 +1,30 @@
-* {
+*{
+    margin: 0px;
+    padding: 0px;
     font-family: Arial, Helvetica;
+    font-family: "Noto Sans", sans-serif;
+    font-optical-sizing: auto;
+}
+
+body{
     display: flex;
-    flex-direction: column;
     justify-content: center;
 }
 
-.reviews {
-    width: 350px;
+.reviews-container {
+    width: 80%;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
 }
 
-.reviews, .brand {
-    margin: 5%;
-}
-
-.reviews, .brand, .app-base {
-    margin-bottom: 40px;
-}
-
-.reviews h2, .brand h2 {
+.reviews-container h2{
     font-size: 24px;
 }
 
 .review {
     background-color: #eaeaea;
-    width: 300px;
+    width: 100%;
     padding: 10px;
     margin-bottom: 10px;
-}
-
-.review p {
-    margin: 5px 0;
 }

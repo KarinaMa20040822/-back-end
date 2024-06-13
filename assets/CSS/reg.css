@@ -1,10 +1,15 @@
-body {
+body{
+    background-color: black;
+}
+
+main {
     margin: 0;
-    font-family: Arial, sans-serif;
+    font-family: "Noto Sans TC", sans-serif;
+    font-optical-sizing: auto;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: calc(100vh - 80px);
     background-color: #000;
 }
 
@@ -13,6 +18,7 @@ body {
     width: 800px;
     height: auto;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    margin-top: 23px;
 }
 
 .left {
@@ -52,7 +58,7 @@ body {
     border-radius: 0px 30px 30px 0px;
 }
 
-form {
+.input-form {
     display: flex;
     flex-direction: column;
 }
@@ -62,7 +68,7 @@ label {
     font-size: 14px;
 }
 
-input {
+.input-form input {
     margin-bottom: 20px;
     padding: 10px;
     font-size: 14px;
@@ -103,4 +109,57 @@ button[type="reset"] {
 
 button[type="reset"]:hover {
     background-color: #333;
+}
+
+.hidden {
+    display: none;
+}
+
+@media screen and (max-width: 800px) {
+    main {
+        margin-top: 15px;
+    }
+
+    .container {
+        flex-direction: column;
+        width: 100%;
+        height: auto;
+        margin: 20px;
+    }
+
+    .left, .right {
+        border-radius: 0;
+        padding: 15px;
+    }
+
+    .left {
+        border-radius: 20px 20px 0 0;
+    }
+
+    .left h1 {
+        padding: 10px 0;
+    }
+
+    .left a, .left p {
+        display: none;
+    }
+
+    .right {
+        border-radius: 0 0 20px 20px;
+        border: 2px solid white;
+    }
+
+    #address {
+        margin-bottom: 10px;
+    }
+
+    button[type="submit"], button[type="reset"] {
+        width: 100%;
+    }
+
+    .hidden {
+        display: flex;
+        color: white;
+        padding: 10px;
+    }
 }
