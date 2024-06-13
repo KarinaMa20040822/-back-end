@@ -179,15 +179,15 @@
                 <div class="form-title2">
                     Leave your message here
                 </div>
-                <form action="/action_page.php" id="userform">
+                <form action="../pages/comment.jsp" method="POST" id="userform">
                     <div class="form-title"></div>
                     <div class="form-email">
                         <div class="form-desc">Your E-mail</div>
-                        <textarea name="comment" form="usrform"></textarea>
+                        <input rows="4" type="text" name="email" required>
                     </div>
                     <div class="form-message">
                         <div class="form-desc">Message</div>
-                        <textarea rows="4" name="comment" form="usrform"></textarea>
+                        <textarea rows="4" name="content" required></textarea>
                     </div>
                     <div class="form-button">
                         <input type="submit" value="Send">
